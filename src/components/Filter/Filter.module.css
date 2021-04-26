@@ -1,0 +1,14 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  color: #818181;
+}
+
+.label__text {
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 150px;
+  margin-bottom: 20px;
+}
