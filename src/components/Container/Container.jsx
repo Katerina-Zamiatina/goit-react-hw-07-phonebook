@@ -1,5 +1,5 @@
 import './Container.css';
 
-export const Container = ({ children }) => (
-  <div className="Container">{children}</div>
-);
+const Container = ({ children }) => <div className="Container">{children}</div>;
+
+export default Container;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
-import { addContact } from '../../redux/contacts/actions';
+import { addContact } from '../../redux/contacts/operations';
 import styles from './Form.module.css';
 
 const Form = ({ onSubmit }) => {

@@ -1,6 +1,6 @@
 import styles from './Contacts.module.css';
 
-export const ContactItem = ({ name, number, onDelete }) => {
+const ContactItem = ({ name, number, onDelete }) => {
   return (
     <li>
       <span>{name} : </span>
@@ -11,3 +11,5 @@ export const ContactItem = ({ name, number, onDelete }) => {
     </li>
   );
 };
+
+export default ContactItem;
