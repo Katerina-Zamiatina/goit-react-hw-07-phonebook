@@ -5,6 +5,7 @@ import Container from './components/Container';
 import Form from './components/Form';
 import ContactsList from './components/Contacts';
 import Filter from './components/Filter';
+import { getLoading } from './redux/contacts/selectors';
 
 function App({ isLoading }) {
   return (
@@ -22,7 +23,7 @@ function App({ isLoading }) {
 }
 
 const mapStateToProps = state => ({
-  isLoading: state.contacts.loading,
+  isLoading: getLoading(state),
 });
 
 export default connect(mapStateToProps, null)(App);

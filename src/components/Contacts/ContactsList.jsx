@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { useEffect } from 'react';
 import ContactItem from './ContactItem';
 import { deleteContact, fetchContacts } from '../../redux/contacts/operations';
+import { getVisibleContacts } from '../../redux/contacts/selectors';
 
 const Contacts = ({ contacts, onDeleteContact, getContacts }) => {
   useEffect(() => {
@@ -23,15 +24,8 @@ const Contacts = ({ contacts, onDeleteContact, getContacts }) => {
   );
 };
 
-const getVisibleContacts = (allContacts, filter) => {
-  const normalizedFilter = filter.toLowerCase();
-  return allContacts.filter(({ name }) =>
-    name.toLowerCase().includes(normalizedFilter),
-  );
-};
-
-const mapStateToProps = ({ contacts: { items, filter } }) => ({
-  contacts: getVisibleContacts(items, filter),
+const mapStateToProps = state => ({
+  contacts: getVisibleContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({
